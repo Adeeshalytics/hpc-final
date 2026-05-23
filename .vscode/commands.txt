@@ -1,0 +1,25 @@
+cd /mnt/c/Users/pavit/OneDrive/Desktop/HPC
+
+serial
+
+gcc serial_matrix.c -o serial_matrix
+./serial_matrix
+
+OpenMP
+
+gcc -fopenmp openmp_matrix.c -o openmp_matrix
+export OMP_NUM_THREADS=4
+./openmp_matrix
+
+MPI
+
+mpicc mpi_matrix.c -o mpi_matrix
+mpirun -np 4 ./mpi_matrix
+
+Hybrid
+mpicc -fopenmp hybrid_matrix.c -o hybrid_matrix
+export OMP_NUM_THREADS=2
+mpirun -np 2 ./hybrid_matrix
+
+
+python3 rmse_check.py

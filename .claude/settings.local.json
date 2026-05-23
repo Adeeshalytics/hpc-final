@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mingw32-make clean *)",
+      "Bash(mingw32-make all *)",
+      "Bash(./serial_matrix.exe 256)",
+      "Bash(OMP_NUM_THREADS=4 ./openmp_matrix.exe 256)",
+      "Bash(./pthreads_matrix.exe 256 4)"
+    ]
+  }
+}
